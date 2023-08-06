@@ -4,10 +4,58 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Josefin+Sans:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Endorsements</title>
   </head>
   <body>
-    <h1>Hello, World!</h1>
+    <div class="container">
+      <h1>We are the Champions</h1>
+      <form id="new-endorsement-form">
+        <textarea
+          name="new-endorsement"
+          id="new-endorsement"
+          placeholder="Write your endorsement here"
+          required
+        ></textarea>
+        <div class="from-to">
+          <input
+            type="text"
+            name="from"
+            id="from"
+            placeholder="From"
+            required
+          />
+          <input type="text" name="to" id="to" placeholder="To" required />
+        </div>
+        <button type="submit">Publish</button>
+      </form>
+
+      <h2>- Endorsements -</h2>
+      <ul class="endorsements">
+        <li class="endorsement">
+          <p class="endorsement-to">To Leanne</p>
+          <p class="endorsement-body">
+            Leanne! Thank you so much for helping me with the March accounting.
+            Saved so much time because of you! 💜 Frode
+          </p>
+          <div class="from-like-container">
+            <p class="endorsement-from">From Frode</p>
+            <button class="endorsement-like">
+              <i class="endorsement-icon fa fa-heart"></i>4
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
   </body>
 </html>
