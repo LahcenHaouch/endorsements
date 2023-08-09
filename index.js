@@ -4,6 +4,7 @@ import {
   ref,
   push,
   onValue,
+  set,
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
 const appSettings = {
@@ -61,8 +62,6 @@ onValue(endorsements, (snapshot) => {
 });
 
 function appendEndorsementToDOM(endorsement) {
-  console.log({ endorsement });
-
   const endorsementEl = document.createElement("li");
   endorsementEl.classList.add("endorsement");
 
@@ -83,6 +82,15 @@ function appendEndorsementToDOM(endorsement) {
 
   const buttonEl = document.createElement("button");
   buttonEl.classList.add("endorsement-like");
+
+  buttonEl.addEventListener("click", () => {
+    const endorsementRef = ref(database, `endorsements/${endorsement.id}`);
+
+    set(endorsementRef, {
+      ...endorsement,
+      likes: endorsement.likes + 1,
+    });
+  });
 
   const iconEl = document.createElement("i");
   iconEl.classList.add("endorsement-icon", "fa", "fa-heart");
